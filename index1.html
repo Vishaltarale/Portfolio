@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vishal Tarale - Professional Portfolio</title>
+    <meta name="description" content="Portfolio website of Vishal Tarale - Python Developer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s ease infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-secondary-800 font-sans antialiased">
+    <!-- Header Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#home" class="flex items-center space-x-2 text-xl font-semibold text-primary-700 hover:text-primary-600 transition-colors">
+                    <span class="font-heading">VISHAL TARALE</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-secondary-700 hover:text-primary-600 px-2 py-1 text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary-600 after:transition-all after:duration-300">Home</a>
+                    <a href="#about" class="text-secondary-700 hover:text-primary-600 px-2 py-1 text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary-600 after:transition-all after:duration-300">About</a>
+                    <a href="#skills" class="text-secondary-700 hover:text-primary-600 px-2 py-1 text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary-600 after:transition-all after:duration-300">Skills</a>
+                    <a href="#projects" class="text-secondary-700 hover:text-primary-600 px-2 py-1 text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-primary-600 after:transition-all after:duration-300">Projects</a>
+                    <a href="#contact" class="bg-primary-600 hover:bg-primary-700 text-white font-medium px-4 py-2 rounded-full transition-all duration-300 text-sm">Contact Me</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-secondary-700 hover:text-primary-600 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white rounded-b-lg shadow-lg absolute left-0 right-0 transition-all duration-300">
+                <div class="px-4 py-5 space-y-5">
+                    <a href="#home" class="block text-secondary-700 hover:text-primary-600 font-medium">Home</a>
+                    <a href="#about" class="block text-secondary-700 hover:text-primary-600 font-medium">About</a>
+                    <a href="#skills" class="block text-secondary-700 hover:text-primary-600 font-medium">Skills</a>
+                    <a href="#projects" class="block text-secondary-700 hover:text-primary-600 font-medium">Projects</a>
+                    <a href="#contact" class="block bg-primary-600 hover:bg-primary-700 text-white font-medium px-4 py-2 rounded-full text-center">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
+            <div class="container mx-auto px-4 md:px-8 py-20">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-1/2 lg:pr-12" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="bg-gradient-to-r from-primary-600 to-blue-500 text-white inline-block px-4 py-1 rounded-full text-sm font-medium mb-6">
+                            Python Developer
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6 leading-tight">
+                            Hello, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-700 to-blue-500 animate-gradient">Vishal Tarale</span>
+                        </h1>
+                        <h2 class="text-xl md:text-2xl text-secondary-600 mb-8">I'm a Professional <span id="element" class="text-primary-600 font-semibold"></span></h2>
+                        <p class="text-secondary-600 mb-8 text-lg leading-relaxed">
+                            Passionate Python Developer with expertise in building secure web applications . Let's create amazing things together.
+                        </p>
+                        <div class="flex flex-wrap gap-4 mb-10">
+                            <a href="#contact" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary-500/20">
+                                Get In Touch
+                            </a>
+                            <a href="#projects" class="bg-white border border-primary-600 text-primary-600 hover:bg-primary-50 font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                View Projects
+                            </a>
+                        </div>
+                        <div class="flex items-center space-x-6">
+                            <a href="https://github.com/Vishaltarale" class="text-secondary-600 hover:text-primary-600 transition-all duration-300 transform hover:scale-110" aria-label="GitHub">
+                                <i class="fa-brands fa-github text-2xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/vishal-tarale-2a0051314/" class="text-secondary-600 hover:text-primary-600 transition-all duration-300 transform hover:scale-110" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in text-2xl"></i>
+                            </a>
+                            <a href="tel:8105272276" class="text-secondary-600 hover:text-primary-600 transition-all duration-300 transform hover:scale-110" aria-label="Phone">
+                                <i class="fa-solid fa-phone text-2xl"></i>
+                            </a>
+                            <a href="https://github.com/Vishaltarale/projects" class="text-secondary-600 hover:text-primary-600 transition-all duration-300 transform hover:scale-110" aria-label="Projects">
+                                <i class="fa-solid fa-diagram-project text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="relative">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-primary-600 to-blue-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+                            <div class="relative bg-white p-2 rounded-full shadow-xl">
+                                <img class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-lg" src="static/profile_pic.jpg" alt="Profile Picture"/>
+                            </div>
+                            <!-- Floating Elements -->
+                            <div class="absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-lg flex items-center gap-2 animate-bounce">
+                                <i class="fa-brands fa-python text-2xl text-blue-600"></i>
+                                <span class="font-medium">Python</span>
+                            </div>
+                            <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg flex items-center gap-2 animate-bounce delay-300">
+                                <i class="fa-solid fa-flask text-2xl text-green-600"></i>
+                                <span class="font-medium">Django</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold font-heading text-secondary-800 inline-block relative">
+                        About Me
+                        <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary-600 to-blue-500"></div>
+                    </h2>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/3" data-aos="fade-right" data-aos-delay="200">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary-600 to-blue-500 rounded-lg transform rotate-6"></div>
+                            <img class="relative rounded-lg shadow-xl" src="static/developer.avif" alt="Developer at work"/>
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3" data-aos="fade-left" data-aos-delay="200">
+                        <h3 class="text-2xl font-heading font-semibold mb-6">A Passionate Python Developer</h3>
+                        <p class="text-secondary-600 text-lg leading-relaxed mb-6">
+                            My name is Vishal. I am a professional and enthusiastic programmer in my daily life. I am a quick learner with a self-learning attitude. I love to learn and explore new technologies and am passionate about problem-solving.
+                        </p>
+                        <p class="text-secondary-600 text-lg leading-relaxed mb-8">
+                            I love almost all the stacks of web application development and love to make the web more open to the world. My core skill is based on Python and I love to do most of the things using Python. I am available for any kind of job opportunity that suits my skills and interests.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-primary-100 text-primary-600 p-2 rounded-lg">
+                                    <i class="fa-solid fa-code text-lg"></i>
+                                </div>
+                                <span class="font-medium">Web Development</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="bg-primary-100 text-primary-600 p-2 rounded-lg">
+                                    <i class="fa-solid fa-database text-lg"></i>
+                                </div>
+                                <span class="font-medium">Backend Development</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="bg-primary-100 text-primary-600 p-2 rounded-lg">
+                                    <i class="fa-solid fa-link text-lg"></i>
+                                </div>
+                                <span class="font-medium">Blockchain Solutions</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="bg-primary-100 text-primary-600 p-2 rounded-lg">
+                                    <i class="fa-solid fa-laptop-code text-lg"></i>
+                                </div>
+                                <span class="font-medium">Python Programming</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold font-heading text-secondary-800 inline-block relative">
+                        My Skills
+                        <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary-600 to-blue-500"></div>
+                    </h2>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="h-1.5 bg-gradient-to-r from-yellow-500 to-red-500"></div>
+                        <div class="p-6 flex flex-col items-center">
+                            <i class="fa-brands fa-html5 text-5xl text-orange-500 mb-4"></i>
+                            <span class="font-medium text-secondary-800">HTML</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="h-1.5 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+                        <div class="p-6 flex flex-col items-center">
+                            <i class="fa-brands fa-css3-alt text-5xl text-blue-500 mb-4"></i>
+                            <span class="font-medium text-secondary-800">CSS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="h-1.5 bg-gradient-to-r from-yellow-400 to-yellow-600"></div>
+                        <div class="p-6 flex flex-col items-center">
+                            <i class="fa-brands fa-js text-5xl text-yellow-500 mb-4"></i>
+                            <span class="font-medium text-secondary-800">JAVASCRIPT</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="h-1.5 bg-gradient-to-r from-blue-500 to-blue-700"></div>
+                        <div class="p-6 flex flex-col items-center">
+                            <i class="fa-brands fa-python text-5xl text-blue-600 mb-4"></i>
+                            <span class="font-medium text-secondary-800">PYTHON</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="h-1.5 bg-gradient-to-r from-green-500 to-green-700"></div>
+                        <div class="p-6 flex flex-col items-center">
+                            <i class="fa-solid fa-flask text-5xl text-green-500 mb-4"></i>
+                            <span class="font-medium text-secondary-800">FLASK</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300" data-aos="zoom-in" data-aos-delay="600">
+                        <div class="h-1.5 bg-gradient-to-r from-gray-700 to-gray-900"></div>
+                        <div class="p-6 flex flex-col items-center">
+                            <i class="fa-brands fa-github text-5xl text-gray-800 mb-4"></i>
+                            <span class="font-medium text-secondary-800">GIT-HUB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Progress Bars -->
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="700">
+                    <div>
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-secondary-700 font-medium">Python</span>
+                                <span class="text-primary-600 font-medium">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary-600 to-blue-500 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-secondary-700 font-medium">HTML & CSS</span>
+                                <span class="text-primary-600 font-medium">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary-600 to-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-secondary-700 font-medium">JavaScript</span>
+                                <span class="text-primary-600 font-medium">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary-600 to-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-secondary-700 font-medium">Flask</span>
+                                <span class="text-primary-600 font-medium">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary-600 to-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-secondary-700 font-medium">Blockchain</span>
+                                <span class="text-primary-600 font-medium">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary-600 to-blue-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-secondary-700 font-medium">Database Management</span>
+                                <span class="text-primary-600 font-medium">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary-600 to-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-white">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold font-heading text-secondary-800 inline-block relative">
+                        My Projects
+                        <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary-600 to-blue-500"></div>
+                    </h2>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative h-64 overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary-600/80 to-blue-500/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                    <a href="#" class="bg-white text-primary-600 px-6 py-3 rounded-full font-medium inline-flex items-center transform hover:scale-105 transition-all">
+                                        View Details <i class="fa-solid fa-arrow-right ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 left-4 bg-primary-600 text-white px-3 py-1 rounded-full text-sm">Blockchain</div>
+                            <div class="h-full bg-secondary-100 flex items-center justify-center">
+                                <i class="fa-solid fa-link text-6xl text-secondary-300"></i>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold font-heading mb-3">Blockchain Enabled Healthcare Data Record</h3>
+                            <p class="text-secondary-600 mb-6">
+                                A secure, decentralized system for managing patient healthcare data with enhanced privacy and data security features.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-sm">Python</span>
+                                <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-sm">Blockchain</span>
+                                <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-sm">Flask</span>
+                                <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-sm">Security</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center">
+                                    View Project <i class="fa-solid fa-arrow-right ml-2"></i>
+                                </a>
+                                <div class="flex space-x-2">
+                                    <a href="#" class="bg-secondary-50 hover:bg-secondary-100 p-2 rounded-full text-secondary-600 transition-colors">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="#" class="bg-secondary-50 hover:bg-secondary-100 p-2 rounded-full text-secondary-600 transition-colors">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative h-64 overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary-600/80 to-blue-500/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                    <a href="#" class="bg-white text-primary-600 px-6 py-3 rounded-full font-medium inline-flex items-center transform hover:scale-105 transition-all">
+                                        View Details <i class="fa-solid fa-arrow-right ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 left-4 bg-primary-600 text-white px-3 py-1 rounded-full text-sm">Web Development</div>
+                            <div class="h-full bg-secondary-100 flex items-center justify-center">
+                                <i class="fa-solid fa-globe text-6xl text-secondary-300"></i>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold font-heading mb-3">Portfolio Website</h3>
+                            <p class="text-secondary-600 mb-6">
+                                A responsive portfolio website showcasing personal projects and technical skills in a professional format.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-sm">HTML</span>
+                                <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-sm">CSS</span>
+                                <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                                <span class="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-sm">Bootstrap</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="#" class="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center">
+                                    View Project <i class="fa-solid fa-arrow-right ml-2"></i>
+                                </a>
+                                <div class="flex space-x-2">
+                                    <a href="#" class="bg-secondary-50 hover:bg-secondary-100 p-2 rounded-full text-secondary-600 transition-colors">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="#" class="bg-secondary-50 hover:bg-secondary-100 p-2 rounded-full text-secondary-600 transition-colors">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More Projects Button -->
+                <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://github.com/Vishaltarale/projects" class="bg-white border-2 border-primary-600 text-primary-600 hover:bg-primary-50 font-medium py-3 px-8 rounded-full transition-all duration-300 inline-flex items-center">
+                        View More Projects <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold font-heading text-secondary-800 inline-block relative">
+                        Testimonials
+                        <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary-600 to-blue-500"></div>
+                    </h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg relative" data-aos="fade-up" data-aos-delay="100">
+                        <div class="absolute -top-5 left-8 text-5xl text-primary-600 opacity-20">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <p class="text-secondary-600 mb-6 relative z-10">
+                            "Vishal is an exceptional Python developer who delivered our healthcare blockchain solution with the highest standards of security and performance. His attention to detail and problem-solving abilities are outstanding."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-secondary-200 rounded-full flex items-center justify-center text-secondary-500">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-secondary-800">Dr. Rajesh Kumar</h4>
+                                <p class="text-secondary-500 text-sm">Medical Director</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg relative" data-aos="fade-up" data-aos-delay="200">
+                        <div class="absolute -top-5 left-8 text-5xl text-primary-600 opacity-20">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <p class="text-secondary-600 mb-6 relative z-10">
+                            "Working with Vishal was a pleasure. He quickly understood our requirements and implemented elegant solutions. His Python expertise and attention to detail made our project a success."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-secondary-200 rounded-full flex items-center justify-center text-secondary-500">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-secondary-800">Priya Mehta</h4>
+                                <p class="text-secondary-500 text-sm">Project Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg relative" data-aos="fade-up" data-aos-delay="300">
+                        <div class="absolute -top-5 left-8 text-5xl text-primary-600 opacity-20">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <p class="text-secondary-600 mb-6 relative z-10">
+                            "Vishal's technical knowledge and commitment to delivering high-quality work impressed our entire team. He's a creative problem solver who goes above and beyond to ensure project success."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-secondary-200 rounded-full flex items-center justify-center text-secondary-500">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-medium text-secondary-800">Amit Patel</h4>
+                                <p class="text-secondary-500 text-sm">Tech Lead</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold font-heading text-secondary-800 inline-block relative">
+                        Get In Touch
+                        <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary-600 to-blue-500"></div>
+                    </h2>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/2" data-aos="fade-right" data-aos-delay="100">
+                        <h3 class="text-2xl font-heading font-semibold mb-6">Contact Information</h3>
+                        <p class="text-secondary-600 mb-8">
+                            Feel free to reach out to me for any inquiries or collaboration opportunities. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary-100 text-primary-600 p-3 rounded-lg">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-medium text-secondary-800">Email</h4>
+                                    <a href="mailto:vishaltarale055@gmail.com" class="text-secondary-600 hover:text-primary-600 transition-colors">vishaltarale055@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary-100 text-primary-600 p-3 rounded-lg">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-medium text-secondary-800">Phone</h4>
+                                    <a href="tel:8105272276" class="text-secondary-600 hover:text-primary-600 transition-colors">+91 8105272276</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary-100 text-primary-600 p-3 rounded-lg">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-medium text-secondary-800">Location</h4>
+                                    <p class="text-secondary-600">Bangalore, India</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium text-secondary-800 mb-4">Connect With Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/Vishaltarale" class="bg-secondary-100 hover:bg-primary-100 text-secondary-600 hover:text-primary-600 p-3 rounded-full transition-all duration-300">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/vishal-tarale-2a0051314/" class="bg-secondary-100 hover:bg-primary-100 text-secondary-600 hover:text-primary-600 p-3 rounded-full transition-all duration-300">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-secondary-100 hover:bg-primary-100 text-secondary-600 hover:text-primary-600 p-3 rounded-full transition-all duration-300">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-secondary-100 hover:bg-primary-100 text-secondary-600 hover:text-primary-600 p-3 rounded-full transition-all duration-300">
+                                    <i class="fa-solid fa-globe"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2" data-aos="fade-left" data-aos-delay="100">
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl font-heading font-semibold mb-6">Send Me a Message</h3>
+                            
+                            <form id="contact-form" class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-secondary-700 mb-2">Full Name</label>
+                                        <input type="text" id="name" name="name" placeholder="Enter your name" required
+                                               class="w-full px-4 py-3 bg-secondary-50 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-secondary-700 mb-2">Email Address</label>
+                                        <input type="email" id="email" name="email" placeholder="Enter your email" required
+                                               class="w-full px-4 py-3 bg-secondary-50 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-secondary-700 mb-2">Subject</label>
+                                    <input type="text" id="subject" name="subject" placeholder="Enter subject" required
+                                           class="w-full px-4 py-3 bg-secondary-50 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all">
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-secondary-700 mb-2">Your Message</label>
+                                    <textarea id="message" name="message" rows="4" placeholder="Enter your message" required
+                                              class="w-full px-4 py-3 bg-secondary-50 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-gradient-to-r from-primary-600 to-blue-500 hover:from-primary-700 hover:to-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-primary-500/20">
+                                    Send Message
+                                </button>
+                            </form>
+                            
+                            <!-- Success message (hidden by default) -->
+                            <div id="success-message" class="hidden mt-6 p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg">
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-check-circle mr-2"></i>
+                                    <span>Thank you! Your message has been sent successfully.</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Error message (hidden by default) -->
+                            <div id="error-message" class="hidden mt-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg">
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-exclamation-circle mr-2"></i>
+                                    <span>Oops! Something went wrong. Please try again later.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-secondary-800 text-white py-16">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold font-heading mb-6">Vishal Tarale</h3>
+                    <p class="text-secondary-300 mb-6">
+                        A passionate Python developer specializing in web application development.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Vishaltarale" class="text-white hover:text-primary-400 transition-colors" aria-label="GitHub">
+                            <i class="fa-brands fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/vishal-tarale-2a0051314/" class="text-white hover:text-primary-400 transition-colors" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="mailto:vishaltarale@example.com" class="text-white hover:text-primary-400 transition-colors" aria-label="Email">
+                            <i class="fa-solid fa-envelope text-xl"></i>
+                        </a>
+                        <a href="tel:8105272276" class="text-white hover:text-primary-400 transition-colors" aria-label="Phone">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold font-heading mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-secondary-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-secondary-300 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#skills" class="text-secondary-300 hover:text-white transition-colors">Skills</a></li>
+                        <li><a href="#projects" class="text-secondary-300 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="#contact" class="text-secondary-300 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold font-heading mb-6">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-envelope text-primary-400 mt-1 mr-3"></i>
+                            <span class="text-secondary-300">vishaltarale055@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-phone text-primary-400 mt-1 mr-3"></i>
+                            <span class="text-secondary-300">+91 8105272276</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot text-primary-400 mt-1 mr-3"></i>
+                            <span class="text-secondary-300">Bangalore, India</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-secondary-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-secondary-400">© 2025 Vishal Tarale. All rights reserved.</p>
+                <p class="text-secondary-400 mt-4 md:mt-0">Designed with <i class="fa-solid fa-heart text-red-500"></i> by Vishal Tarale</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+ document.addEventListener('DOMContentLoaded', function() {
+    // Initialize TypedJS and other features remain unchanged
+    new Typed('#element', {
+        strings: ['Web Developer', 'Python Developer', 'Problem Solver'],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true
+    });
+    
+    // Initialize AOS Animation
+    AOS.init({
+        once: true,
+        duration: 800,
+        easing: 'ease-in-out'
+    });
+    
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', function() {
+        if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenuButton.innerHTML = '<i class="fa-solid fa-xmark text-xl"></i>';
+        } else {
+            mobileMenu.classList.add('hidden');
+            mobileMenuButton.innerHTML = '<i class="fa-solid fa-bars text-xl"></i>';
+        }
+    });
+    
+    // Close mobile menu when clicking on a link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+            mobileMenuButton.innerHTML = '<i class="fa-solid fa-bars text-xl"></i>';
+        });
+    });
+    
+    // Sticky header
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('shadow-md');
+            header.classList.remove('shadow-sm');
+        } else {
+            header.classList.remove('shadow-md');
+            header.classList.add('shadow-sm');
+        }
+    });
+    
+    // FIXED: Proper EmailJS initialization with your public key
+    emailjs.init("CuVFD-eYXvhRLLVPBvW9p");
+    
+    // Contact form submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Set loading state
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> Sending...';
+            submitButton.disabled = true;
+            
+            // FIXED: Properly format template parameters - removing to_email from template parameters
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+                // Removed to_email parameter as it should be configured in EmailJS template
+            };
+            
+            console.log("Sending email with params:", templateParams);
+            
+            // FIXED: Make sure service ID and template ID are correct
+            emailjs.send('service_vppfzni', 'template_s5ekjos', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Show success message
+                    successMessage.classList.remove('hidden');
+                    errorMessage.classList.add('hidden');
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(function() {
+                        successMessage.classList.add('hidden');
+                    }, 5000);
+                })
+                .catch(function(error) {
+                    console.error('FAILED...', error);
+                    
+                    // Show error message
+                    errorMessage.classList.remove('hidden');
+                    successMessage.classList.add('hidden');
+                    
+                    // Hide error message after 5 seconds
+                    setTimeout(function() {
+                        errorMessage.classList.add('hidden');
+                    }, 5000);
+                })
+                .finally(function() {
+                    // Reset button
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.disabled = false;
+                });
+        });
+    } else {
+        console.error("Contact form not found in the document");
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80, // Adjust for header height
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+    </script>
+</body>
+</html>
